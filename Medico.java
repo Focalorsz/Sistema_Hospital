@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 
 public class Medico extends Pessoa{
-    private Especialidade especialidade;
+    private final Especialidade especialidade;
     private String CRM;
     private Integer NumeroConsultas;
     private double CustoConsulta;
@@ -11,7 +11,7 @@ public class Medico extends Pessoa{
         super(nome,cpf,idade,genero,telefone);
         this.especialidade = especialidade;
         this.CRM = CRM;
-        this.NumeroConsultas = NumeroConsultas;
+        this.NumeroConsultas = 0;
         this.CustoConsulta = CustoConsulta;
         this.AgendaHorarios = AgendaHorarios;
     }
@@ -32,7 +32,7 @@ public class Medico extends Pessoa{
         return NumeroConsultas;
     }
     public void setNumeroConsultas(Integer NumeroConsultas) {
-        NumeroConsultas = NumeroConsultas;
+        this.NumeroConsultas = NumeroConsultas;
     }
     public double getCustoConsulta() {
         return CustoConsulta;
@@ -40,4 +40,8 @@ public class Medico extends Pessoa{
     public void setCustoConsulta(double CustoConsulta) {
         this.CustoConsulta = CustoConsulta;
     }
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
+
 }
